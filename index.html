@@ -2,9 +2,11 @@
 <html>
 	<head>
 		<title>Cat Clicker</title>
-		<script type="text/javascript" src="javascript1.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
 	</head>
 	<body>
 		<div class="container">
@@ -13,38 +15,82 @@
 					<h1>Cat clicker</h1>
 				</div>
 			</div>
+			<ul>
+				<li>
+					<div style="cursor:pointer;">
+					<a id='showimage1'><h3 style="font-style:italic;">Maine Coon</h3></a>
+						<div id='image1' style="display:none;">
+							<img  src="cat1.jpg" class='img-responsive' >
+							<span id='count1' style="font-style:italic;"></span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div style="cursor:pointer;" >
+					<a id='showimage2'><h3 style="font-style:italic;">Ragdoll</h3></a>
+						<div id='image2' style="display:none;">
+							<img src="cat2.jpg" class='img-responsive'>
+							<span id='count2' style="font-style:italic;"></span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div style="cursor:pointer;" >
+					<a id='showimage3'><h3 style="font-style:italic;">Parsian</h3></a>
+						<div id='image3' style="display:none;">
+							<img  src="cat3.jpg" class='img-responsive'>
+							<span id='count3' style="font-style:italic;"></span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div style="cursor:pointer;" >
+					<a id='showimage4'><h3 style="font-style:italic;">Scottish</h3></a>
+						<div id='image4' style="display:none;">
+							<img src="cat4.jpg" class='img-responsive'>
+							<span id='count4' style="font-style:italic;"></span>
+						</div>
+					</div>
+				</li>
+			</ul>
 			<div class='row'>
-				<div class='col-md-6'>
-					<h3 style="font-style:italic;">click on this cat image 1</h3>
-				</div>
-				<div class='col-md-6'>
-					<h3 style="font-style:italic;">click on this cat image 2</h3>
-				</div>
-			</div>
-			<div class='row'>
-				<div style="cursor:pointer;" class='col-md-6'>
-					<img id='image1' src="cat1.jpg" class='img-responsive'>
-				</div>
-				<div style="cursor:pointer;" class='col-md-6'>
-					<img id='image2' src="cat2.jpg" class='img-responsive'>
-				</div>
-			</div>
-			<div class='row'>
-				<div class='col-md-6'>
-					<span id='count1' style="font-style:italic;"></span>
-				</div>
-				<div class='col-md-6'>
-					<span id='count2' style="font-style:italic;"></span>
-				</div>
-			</div>
+				
+				
 		</div>
 	<script>
+		$(document).ready(function(){
+			$("#showimage1").click(function(){
+				$('#image1').toggle(700);
+			});
+		});
+		
+		$(document).ready(function(){
+			$("#showimage2").click(function(){
+				$('#image2').toggle(700);
+			});
+		});
+		
+		$(document).ready(function(){
+			$("#showimage3").click(function(){
+				$('#image3').toggle(700);
+			});
+		});
+		
+		$(document).ready(function(){
+			$("#showimage4").click(function(){
+				$('#image4').toggle(700);
+			});
+		});
+	
 		var clicks1 = 0;
 		
 		var elmn = document.getElementById('image1');
 		elmn.addEventListener('click', function (){
 		  clicks1 = clicks1 + 1;
-		  document.getElementById('count1').innerHTML = "Number of clicks " + clicks1 ;
+		  if(clicks1 === 1){
+			document.getElementById('count1').innerHTML = "Number of click on maine coon is " + clicks1 ;
+		    }
+		  else {document.getElementById('count1').innerHTML = "Number of clicks on maine coon is " + clicks1 ;}
 		});
 		
 		var clicks2 = 0;
@@ -52,7 +98,32 @@
 		var elmn = document.getElementById('image2');
 		elmn.addEventListener('click', function (){
 		  clicks2 = clicks2 + 1;
-		  document.getElementById('count2').innerHTML = "Number of clicks " + clicks2 ;
+		  if(clicks2 === 1){
+			document.getElementById('count2').innerHTML = "Number of click on ragdoll is " + clicks2 ;
+		    }
+		  else {document.getElementById('count2').innerHTML = "Number of clicks on ragdoll is " + clicks2 ;}
+		});
+		
+		var clicks3 = 0;
+		
+		var elmn = document.getElementById('image3');
+		elmn.addEventListener('click', function (){
+		  clicks3 = clicks3 + 1;
+		  if(clicks3 === 1){
+			document.getElementById('count3').innerHTML = "Number of click on parsian2 is " + clicks3 ;
+		    }
+		  else {document.getElementById('count3').innerHTML = "Number of clicks on parsian is " + clicks3 ;}
+		});
+		
+		var clicks4 = 0;
+		
+		var elmn = document.getElementById('image4');
+		elmn.addEventListener('click', function (){
+		  clicks4 = clicks4 + 1;
+		  if(clicks4 === 1){
+			document.getElementById('count4').innerHTML = "Number of click on scottish is " + clicks4 ;
+		    }
+		  else {document.getElementById('count4').innerHTML = "Number of clicks on scottish is " + clicks4 ;}
 		});
 	</script>	
 	</body>
